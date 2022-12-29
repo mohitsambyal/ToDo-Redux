@@ -5,12 +5,13 @@ import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
-  const [todo, setTodo] = useState();
+  const [todo, setTodo] = useState("");
   const todoData = useSelector((state) => state.Todo);
   const { todos } = todoData;
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(AddTodoAction(todo));
+    setTodo("");
   };
   const removeHandler = (data) => {
     dispatch(RemoveTodoAction(data));
@@ -22,7 +23,7 @@ function App() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            name=""
+            name="cc"
             style={{
               width: 350,
               padding: 10,
